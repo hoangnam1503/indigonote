@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application settings -->
+    <string name="app_name">Indigo Note</string>
+    <string name="action_done">Done</string>
+    <string name="action_setting">Settings</string>
+    <string name="action_note">Note</string>
+	<string name="preferences_general">General</string>
+    
+    <!-- Menu settings -->
+    <string name="menu_main_add">ADD</string>
+    <string name="menu_main_del">DELETE</string>
+    
+    <!-- Activity settings -->
+    <string name="activity_edit_note_title_hint">Just do it</string>
+    <string name="activity_edit_note_content_hint">Just write it</string>
+    <string name="activity_edit_note_button">ADD</string>
+    <string name="actiivty_main_undobtn">Tap to undo</string>
+    
+    <!-- Fragment settings -->
+    <string name="fragment_content_undo_note_deleted">Note deleted</string>
+</resources>

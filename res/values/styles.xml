@@ -1,0 +1,16 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!-- Activity elements -->
+	<style name="splash_text">
+	    <item name="android:textSize">40sp</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:textStyle">bold</item>
+	</style>
+
+	<!-- ListView elements -->
+    <style name="shadowCardStyle" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/bg_note_shadow1</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+</resources>

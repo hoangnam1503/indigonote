@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <Spinner 
+        android:id="@+id/activity_edit_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/priorities"/>
+    
+	<EditText 
+	    android:id="@+id/activity_edit_note_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/activity_edit_note_title_hint"
+        android:background="@drawable/edittext_rounded"
+        android:padding="8dp"
+	    android:maxLength="20"/>
+    
+	<RatingBar 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:numStars="5"/>
+	
+	<com.android.indigonote.utility.IndigoEditText 
+	    android:id="@+id/activity_edit_note_content"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+        android:background="@drawable/edittext_rounded"
+        android:padding="8dp"
+        android:minLines="5"
+        android:gravity="start"
+	    android:hint="@string/activity_edit_note_content_hint"/>
+	
+	<TextView 
+	    android:id="@+id/activity_edit_note_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:padding="8dp"
+	    android:background="@drawable/btn_note_selector"
+	    android:text="@string/activity_edit_note_button" />
+</LinearLayout>

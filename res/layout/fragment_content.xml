@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_activity_home" >
+    
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:layout_margin="10dp"
+        android:divider="@android:color/transparent" />
+    
+    <LinearLayout 
+        android:id="@+id/activity_main_undobar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fragment_content_undobar_bg"
+        android:layout_gravity="bottom|center_horizontal"
+	    android:orientation="horizontal"
+	    android:paddingRight="8dp" >
+        
+        <TextView 
+            android:id="@+id/activity_main_undobar_mdg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        	android:padding="10dp"
+            android:text="@string/fragment_content_undo_note_deleted"
+            android:textSize="16sp"
+            android:textColor="@color/activity_main_undobar_text"/>
+        
+        <View 
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+        	android:layout_margin="10dp"
+            android:background="@color/fragment_content_undobar_text"/>
+        
+        <Button 
+            android:id="@+id/activity_main_undobar_undobtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+	        android:padding="10dp"
+	        android:paddingRight="8dp"
+        	android:background="@null"
+            android:drawableLeft="@drawable/ic_undo"
+            android:text="@string/actiivty_main_undobtn"
+            android:textColor="@color/activity_main_undobar_text"
+        	android:textSize="16sp"/>
+    </LinearLayout>
+</FrameLayout>
+

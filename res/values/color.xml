@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Indicator bar features -->
+    <color name="indicator_slider_color">#91c3ff</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="navigation_drawer_background">#fff3f3f3</color>
+    
+    <!-- Activity settings -->
+    <color name="activity_main_undobar">#808080</color>
+    <color name="activity_main_undobar_text">#fff</color>
+    
+    <!-- Fragment settings -->
+    <color name="fragment_content_undobar_bg">#808080</color>
+    <color name="fragment_content_undobar_text">#fff</color>
+    
+    <!-- View settings -->
+    <color name="edit_text_rounded_stroke">#D1D1D1</color>
+    <color name="edit_text_rounded_solid">#FFF</color>
+</resources>
