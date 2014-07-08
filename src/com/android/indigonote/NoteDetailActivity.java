@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -57,6 +56,16 @@ public class NoteDetailActivity extends Activity {
 			}
 
 		});
+	}
+	
+	@Override
+	public void onBackPressed() {
+		if (TextUtils.isEmpty(mNoteTitle.getText().toString())) {
+			makeToast();
+		} else {
+			setResult(RESULT_OK);
+			finish();
+		}
 	}
 
 	private void fillData(Uri uri) {
