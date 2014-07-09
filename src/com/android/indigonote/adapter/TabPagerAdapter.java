@@ -5,9 +5,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.android.indigonote.fragment.NoteIndigoListFragment;
+import com.android.indigonote.fragment.base.NoteIndigoListFragmentBase;
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
 	private final String[] mTabsTitle = { "Todo", "Note"};
+	private NoteIndigoListFragmentBase currentFragment;
+	private int curFragment;
 	
 	public TabPagerAdapter(FragmentManager fragmentManager) {
 		super(fragmentManager);
@@ -22,9 +25,13 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int position) {
 		switch (position) {
 		case 0:
-			return new NoteIndigoListFragment();
+			setCurFragment(0);
+			currentFragment = new NoteIndigoListFragment();
+			return currentFragment;
 		default:
-			return new NoteIndigoListFragment();
+			setCurFragment(1);
+			currentFragment = new NoteIndigoListFragment();
+			return currentFragment;
 		}
 	}
 
@@ -32,5 +39,20 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 	public int getCount() {
 		return mTabsTitle.length;
 	}
-	
+
+	public int getCurFragment() {
+		return curFragment;
+	}
+
+	public void setCurFragment(int curFragment) {
+		this.curFragment = curFragment;
+	}
+
+	public NoteIndigoListFragmentBase getCurrentFragment() {
+		return currentFragment;
+	}
+
+	public void setCurrentFragment(NoteIndigoListFragmentBase currentFragment) {
+		this.currentFragment = currentFragment;
+	}	
 }

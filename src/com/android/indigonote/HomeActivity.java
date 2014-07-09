@@ -1,5 +1,6 @@
 package com.android.indigonote;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -7,14 +8,17 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
 import com.android.indigonote.adapter.TabPagerAdapter;
+import com.android.indigonote.db.provider.IndigoNoteContentProvider;
 import com.android.indigonote.fragment.base.FragmentActivityBase;
 import com.android.indigonote.utility.SlidingTabStrip;
 
 public class HomeActivity extends FragmentActivityBase {
 	private DrawerLayout mDrawerLayout;
+	private static final int DELETE_ID = Menu.FIRST + 1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,7 @@ public class HomeActivity extends FragmentActivityBase {
 		getMenuInflater().inflate(R.menu.menu_home, menu);
 		return true;
 	}
-	
+	  
 	@Override
 	public boolean onPrepareOptionsMenu (Menu menu) {
 		boolean drawer = mDrawerLayout.isDrawerVisible(Gravity.RIGHT);
@@ -68,7 +72,7 @@ public class HomeActivity extends FragmentActivityBase {
 		
 		return super.onPrepareOptionsMenu(menu);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected (MenuItem menuItem) {
 		switch (menuItem.getItemId()) {
@@ -87,5 +91,5 @@ public class HomeActivity extends FragmentActivityBase {
 		}
 		
 		return super.onOptionsItemSelected(menuItem);
-	}
+	}	
 }

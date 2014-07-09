@@ -12,6 +12,7 @@ import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.indigonote.NoteDetailActivity;
@@ -43,8 +44,17 @@ public class NoteIndigoListFragmentBase extends ListFragment implements LoaderCa
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-
 		mListView = (ListView) getListView();
+		mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+	        @Override
+	        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) { 
+	    		Uri uri = Uri.parse(IndigoNoteContentProvider.CONTENT_URI + "/" + id);
+	    		mContext.getContentResolver().delete(uri, null, null);
+	    		fillData();
+	            return true;
+	        }
+	    });
+		
 		fillData();
 		registerForContextMenu(mListView);
 	}
@@ -60,7 +70,7 @@ public class NoteIndigoListFragmentBase extends ListFragment implements LoaderCa
 		startActivity(intent);
 	}
 	
-	protected void fillData() {}
+	public void fillData() {}
 	
 	@Override
 	public Loader<Cursor> onCreateLoader(int id, Bundle args) {

@@ -17,7 +17,7 @@ public class NoteIndigoListFragment extends NoteIndigoListFragmentBase {
 	}
 	
 	@Override
-	protected void fillData() {
+	public void fillData() {
 		getLoaderManager().initLoader(0, null, this);
 		mCursor = mContext.getContentResolver().query(
 				IndigoNoteContentProvider.CONTENT_URI, 
